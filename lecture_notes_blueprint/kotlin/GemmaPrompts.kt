@@ -121,6 +121,22 @@ object GemmaPrompts {
         Answer:
     """.trimIndent()
 
+    // ─── Merge multiple summaries (used by chunked mode) ─────────────────
+    fun mergeSummaries(perChunkSummaries: String, maxWords: Int = 250): String = """
+        Below are per-section summaries of a long lecture. Merge them into a
+        single, coherent $maxWords-word summary that:
+        - Removes duplication across sections
+        - Preserves specific facts, formulas, and definitions
+        - Reads as one continuous piece, not a list of parts
+        - Does NOT mention "Part 1", "Part 2", etc.
+        
+        --- SECTION SUMMARIES ---
+        $perChunkSummaries
+        --- END ---
+        
+        Unified summary:
+    """.trimIndent()
+
     // ─── Quiz generation (bonus) ─────────────────────────────────────────
     fun quiz(transcript: String, questionCount: Int = 10): String = """
         Create a $questionCount-question multiple choice quiz based on this lecture transcript.
