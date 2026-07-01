@@ -1,0 +1,115 @@
+{
+  "manifestVersion": 1,
+  "minLanguagePackVersion": "1.0.0",
+  "models": [
+    {
+      "id": "streaming_zipformer_en",
+      "displayName": "Live Captions (English)",
+      "purpose": "Real-time speech-to-text during recording",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2",
+      "sizeBytes": 367001600,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "asr/streaming_zipformer_en",
+      "required": true,
+      "languagePack": "en"
+    },
+    {
+      "id": "whisper_small_en",
+      "displayName": "Accurate Final Transcript (English)",
+      "purpose": "High-accuracy post-recording transcription",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.en.tar.bz2",
+      "sizeBytes": 524288000,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "asr/whisper_small_en",
+      "required": true,
+      "languagePack": "en"
+    },
+    {
+      "id": "silero_vad",
+      "displayName": "Voice Activity Detection",
+      "purpose": "Detects speech vs silence",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/raw/master/sherpa-onnx/scripts/vad/silero_vad.onnx",
+      "sizeBytes": 2097152,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "vad",
+      "installFile": "silero_vad.onnx",
+      "required": true
+    },
+    {
+      "id": "pyannote_segmentation",
+      "displayName": "Speaker Segmentation",
+      "purpose": "Detects speaker changes for diarization",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-segmentation-models/sherpa-onnx-pyannote-segmentation-3-0.tar.bz2",
+      "sizeBytes": 10485760,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "diarization/segmentation",
+      "required": true
+    },
+    {
+      "id": "speaker_embedding",
+      "displayName": "Speaker Fingerprint",
+      "purpose": "Groups audio segments by speaker",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+      "sizeBytes": 41943040,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "diarization",
+      "installFile": "speaker_embedding.onnx",
+      "required": true
+    },
+    {
+      "id": "wespeaker_voice_id",
+      "displayName": "Cross-Lecture Voice ID (English)",
+      "purpose": "Recognizes 'Teacher' across lectures",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/wespeaker_en_voxceleb_resnet34_LM.onnx",
+      "sizeBytes": 41943040,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "voice_id",
+      "installFile": "wespeaker_en.onnx",
+      "required": true
+    },
+    {
+      "id": "punctuation",
+      "displayName": "Punctuation",
+      "purpose": "Adds periods, commas, question marks, capitals",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/punctuation-models/sherpa-onnx-punct-ct-transformer-zh-en-vocab272727-2024-04-12.tar.bz2",
+      "sizeBytes": 41943040,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "punctuation",
+      "required": true
+    },
+    {
+      "id": "gemma4_e2b_int4",
+      "displayName": "Notes Generator (Gemma 4 E2B)",
+      "purpose": "Generates summary, notes, flashcards, Q&A",
+      "url": "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it-int4.litertlm",
+      "sizeBytes": 1610612736,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "llm",
+      "installFile": "gemma-4-E2B-it-int4.litertlm",
+      "required": true,
+      "requiresMinRamMb": 6144
+    }
+  ],
+  "optionalPacks": [
+    {
+      "id": "sense_voice_multilingual",
+      "displayName": "Multilingual ASR (5 languages)",
+      "purpose": "Chinese, English, Japanese, Korean, Cantonese — replaces Whisper",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2",
+      "sizeBytes": 241172480,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "asr/sense_voice",
+      "languagePack": "multi"
+    },
+    {
+      "id": "parakeet_tdt_en",
+      "displayName": "Parakeet TDT (Best-in-class English)",
+      "purpose": "Alternative to Whisper — try for A/B testing",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v2-int8.tar.bz2",
+      "sizeBytes": 629145600,
+      "sha256": "PENDING_VERIFY_ON_FIRST_DOWNLOAD",
+      "installDir": "asr/parakeet_tdt",
+      "languagePack": "en"
+    }
+  ]
+}
